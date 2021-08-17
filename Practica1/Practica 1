@@ -1,0 +1,32 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<math.h>
+
+int main(){
+	int n, i, j, numal, temp;
+	printf("Indique el numero de numeros aleatorios a ordenar: \n");
+	scanf("%d", &n);
+	int repos[n];
+
+	for (i = 0; i < n; i++){
+		numal = rand() % 20000;
+		repos[i] = numal;
+	}
+
+	//Usando un metodo de burbuja...
+	for (i = 0; i < (n - 1); i++){
+    	for (j = i + 1; j < n; j++){
+    		if (repos[j] < repos[i]){
+		        temp = repos[j];
+		        repos[j] = repos[i];
+		        repos[i] = temp;
+    		}
+    	}
+  	}
+	printf ("Los numeros aleatorios ordenados son:\n");
+	for (i = 0; i < n; i++){
+    	printf("%d, ", repos[i]);
+	}
+    system("PAUSE");
+  	return 0;
+}
